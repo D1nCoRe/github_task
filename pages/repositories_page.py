@@ -21,6 +21,7 @@ class RepositoriesPage(BasePage):
     def should_be_description_blank(self):
         assert BrowserHelper.is_element_present(BrowserHelper(self.browser), *CreateRepositoryLocators.DESCRIPTION_BLANK)
 
+    @allure.step("Create repository")
     def create_new_repository(self):
         BrowserHelper.send_keys(BrowserHelper(self.browser), *CreateRepositoryLocators.REPOSITORY_NAME_BLANK, repository_name)
         BrowserHelper.click_element(BrowserHelper(self.browser), *CreateRepositoryLocators.BUTTON_CREATE_REPOSITORY)
@@ -38,6 +39,7 @@ class RepositoriesPage(BasePage):
     def go_to_settings(self):
         BrowserHelper.click_element(BrowserHelper(self.browser), *DeleteRepositoryLocators.SETTINGS_BUTTON)
 
+    @allure.step("Create readme")
     def create_readme(self):
         BrowserHelper.click_element(BrowserHelper(self.browser), *CreateRepositoryLocators.README_LINK)
 

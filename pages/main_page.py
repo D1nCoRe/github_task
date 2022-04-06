@@ -1,5 +1,4 @@
 import allure
-
 from tests.test_data.users import username
 from .base_page import BasePage
 from .locators import MainPageLocators
@@ -20,5 +19,5 @@ class MainPage(BasePage):
         username_in_account = BrowserHelper.find_visible_element(BrowserHelper(self.browser), *MainPageLocators.USERNAME_ON_PAGE).text
         assert username == username_in_account
 
-    def new_repository_button(self):
+    def go_to_create_repository_page(self):
         BrowserHelper.click_element(BrowserHelper(self.browser), *MainPageLocators.NEW_REPOSITORY_BUTTON)

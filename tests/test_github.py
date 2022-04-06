@@ -33,7 +33,6 @@ class TestCreateRepository:
         settings_page = SettingsPage(browser, link)
         rep_page.go_to_settings()
         settings_page.delete_repository()
-        settings_page.confirm_delete()
 
     @allure.feature("Create repository")
     def test_create_repository(self, browser):
@@ -43,7 +42,7 @@ class TestCreateRepository:
         login_page = LoginPage(browser, link)
         login_page.sign_in(username, password)
         main_page = MainPage(browser, link)
-        main_page.new_repository_button()
+        main_page.go_to_create_repository_page()
         rep_page = RepositoriesPage(browser, link)
         rep_page.should_be_create_new_repository_page()
         rep_page.create_new_repository()
@@ -60,14 +59,13 @@ class TestRenameRepository:
         login_page = LoginPage(browser, link)
         login_page.sign_in(username, password)
         main_page = MainPage(browser, link)
-        main_page.new_repository_button()
+        main_page.go_to_create_repository_page()
         rep_page = RepositoriesPage(browser, link)
         rep_page.create_new_repository()
         yield
         settings_page = SettingsPage(browser, link)
         rep_page.go_to_settings()
         settings_page.delete_repository()
-        settings_page.confirm_delete()
 
     @allure.feature("Rename repository")
     def test_rename_repository(self, browser):
@@ -96,7 +94,7 @@ class TestDeleteRepository:
         login_page = LoginPage(browser, link)
         login_page.sign_in(username, password)
         main_page = MainPage(browser, link)
-        main_page.new_repository_button()
+        main_page.go_to_create_repository_page()
         rep_page = RepositoriesPage(browser, link)
         rep_page.create_new_repository()
         yield
@@ -107,5 +105,4 @@ class TestDeleteRepository:
         rep_page.go_to_settings()
         settings_page = SettingsPage(browser, link)
         settings_page.delete_repository()
-        settings_page.confirm_delete()
 

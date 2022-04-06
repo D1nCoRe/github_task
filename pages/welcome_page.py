@@ -1,5 +1,3 @@
-import allure
-
 from .base_page import BasePage
 from .locators import LoginPageLocators
 from ..utils.browser_helper import BrowserHelper

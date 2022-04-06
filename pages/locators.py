@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-
 from tests.test_data.repositories import repository_name
 
 
@@ -28,7 +27,7 @@ class CreateRepositoryLocators:
 
 class RenameRepositoryLocators:
     REPOSITORY_NAME_IN_ACC = (By.XPATH, "//*[@class='mr-2 flex-self-stretch']/a")
-    REPOSITORY_NEW_NAME = (By.XPATH, "//input[@name='new_name']")
+    CHANGE_REPOSITORY_NAME_BLANK = (By.XPATH, "//input[@name='new_name']")
     BUTTON_RENAME_REPOSITORY = (By.XPATH, "//button[@class='flex-self-end btn']")
 
 
